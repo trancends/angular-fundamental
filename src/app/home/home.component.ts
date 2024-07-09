@@ -4,6 +4,7 @@ import { RandomColor } from '../ui/random-color.directive';
 import { ReversePipe } from '../ui/reverse.pipe';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../ui/shared.module';
 
 @Component({
   selector: 'app-home',
@@ -33,6 +34,7 @@ export class HomeComponent {
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule.forChild([
       {
         path: '',
@@ -40,6 +42,6 @@ export class HomeComponent {
       },
     ]),
   ],
-  declarations: [HomeComponent, WelcomeComponent, ReversePipe, RandomColor],
+  declarations: [HomeComponent, WelcomeComponent],
 })
 export class HomeModule {}
