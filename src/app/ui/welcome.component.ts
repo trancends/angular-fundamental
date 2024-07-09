@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   standalone: true,
   selector: 'app-welcome',
-  template: `<h1>Welcome</h1>`,
+  template: `<h1>Welcome {{ name }}</h1>`,
 })
-export class WelcomeComponent {}
+export class WelcomeComponent {
+  @Input() name = 'friend';
+}
