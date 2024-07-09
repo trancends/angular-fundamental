@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { SettingsComponent } from './settings/SettingsComponent';
+import { SettingsComponent } from './settings/settings.component';
 
 @Component({
   selector: 'app-root',

@@ -1,15 +1,15 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () =>
-      import('./home/home.component').then((m) => m.HomeComponent),
+    component: HomeComponent,
   },
   {
     path: 'settings',
-    loadChildren: () =>
-      import('./settings/SettingsComponent').then((m) => m.SettingsComponent),
+    loadComponent: () =>
+      import('./settings/settings.component').then((m) => m.SettingsComponent),
   },
   {
     path: '',
