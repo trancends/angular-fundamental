@@ -1,7 +1,7 @@
 import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
-  // standalone: true,
+  standalone: true,
   selector: '[randomColor]',
 })
 export class RandomColor {

@@ -1,13 +1,12 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { WelcomeComponent } from '../ui/welcome.component';
 import { RandomColor } from '../ui/random-color.directive';
 import { ReversePipe } from '../ui/reverse.pipe';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { SharedModule } from '../ui/shared.module';
 
 @Component({
+  standalone: true,
   selector: 'app-home',
+  imports: [WelcomeComponent, RandomColor, ReversePipe],
   template: `
     <app-welcome
       [name]="user.name"
@@ -30,18 +29,3 @@ export class HomeComponent {
     this.answer = 'yes';
   }
 }
-
-@NgModule({
-  imports: [
-    CommonModule,
-    SharedModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomeComponent,
-      },
-    ]),
-  ],
-  declarations: [HomeComponent, WelcomeComponent],
-})
-export class HomeModule {}
