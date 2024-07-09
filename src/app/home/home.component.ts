@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { WelcomeComponent } from '../ui/welcome.component';
+import { RandomColor } from '../ui/random-color.directive';
 
 @Component({
   standalone: true,
@@ -8,7 +8,8 @@ import { WelcomeComponent } from '../ui/welcome.component';
   template: `
     <app-welcome />
     <p>This is home component</p>
+    <p randomColor>I am stylish</p>
   `,
-  imports: [WelcomeComponent, CommonModule],
+  imports: [WelcomeComponent, RandomColor],
 })
 export class HomeComponent {}
