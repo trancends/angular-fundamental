@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  standalone: true,
+  // standalone: true,
   selector: 'app-welcome',
   template: `
     <h1>Welcome {{ name }}</h1>

@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { WelcomeComponent } from '../ui/welcome.component';
+import { RandomColor } from '../ui/random-color.directive';
+import { ReversePipe } from '../ui/reverse.pipe';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  standalone: true,
   selector: 'app-home',
   template: `
     <app-welcome
@@ -11,9 +14,9 @@ import { WelcomeComponent } from '../ui/welcome.component';
     />
     <p>Do i want Cookie?</p>
     <p>{{ answer }}</p>
+    <p randomColor>{{ 'reverse this' | reverse }}</p>
     <p>This is home component</p>
   `,
-  imports: [WelcomeComponent],
 })
 export class HomeComponent {
   user = {
@@ -26,3 +29,17 @@ export class HomeComponent {
     this.answer = 'yes';
   }
 }
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: HomeComponent,
+      },
+    ]),
+  ],
+  declarations: [HomeComponent, WelcomeComponent, ReversePipe, RandomColor],
+})
+export class HomeModule {}
