@@ -12,6 +12,11 @@ export const routes: Routes = [
       import('./settings/settings.component').then((m) => m.SettingsComponent),
   },
   {
+    path: 'detail/:id',
+    loadComponent: () =>
+      import('./detail/detail.component').then((m) => m.DetailComponent),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
