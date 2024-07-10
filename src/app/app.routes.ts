@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { TemplateFormComponent } from './form/templateForm/template-form.component';
 import { ReactiveFormComponent } from './form/reactiveForm/reactive-from.component';
 import { BuilderFormComponent } from './form/builderForm/builder-form.component';
+import { FetchRedditComponent } from './detail/fetchData/fetch-reddit.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,10 @@ export const routes: Routes = [
   {
     path: 'form/builder',
     component: BuilderFormComponent,
+  },
+  {
+    path: 'fetch',
+    component: FetchRedditComponent,
   },
   {
     path: '',
