@@ -6,11 +6,18 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   template: `
     <h1>Welcome {{ name }}</h1>
     <p>Do you accept the yummy cookies?</p>
-    <button (click)="cookiesAccepted.emit(true)">I do!</button>
+    <button (click)="toggleCookies()">I do!</button>
   `,
 })
 export class WelcomeComponent {
   @Input() name = 'friend';
 
-  @Output() cookiesAccepted = new EventEmitter();
+  checked = false;
+
+  @Output() cookiesAccepted = new EventEmitter<boolean>();
+
+  toggleCookies() {
+    this.checked = !this.checked;
+    this.cookiesAccepted.emit(this.checked);
+  }
 }
