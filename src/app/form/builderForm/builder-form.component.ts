@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormNavComponent } from '../../ui/form-nav.component';
 
 @Component({
@@ -34,11 +34,12 @@ export class BuilderFormComponent {
   private fb = inject(FormBuilder);
 
   myForm = this.fb.group({
-    fistname: [''],
-    lastname: [''],
+    fistname: ['', Validators.required],
+    lastname: ['', [Validators.minLength(20), Validators.required]],
   });
 
   handleSubmit() {
     console.log(this.myForm.value);
+    console.log(this.myForm.valid);
   }
 }
